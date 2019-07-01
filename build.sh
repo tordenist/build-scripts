@@ -100,7 +100,7 @@ libs+=(
     https://download.savannah.gnu.org/releases/freetype/freetype-2.5.3.tar.gz
     # Stick with this version due to:
     #   https://github.com/Arachni/arachni/issues/648
-    https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.11.1.tar.gz
+    https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.13.1.tar.gz
 )
 
 #

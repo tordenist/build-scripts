@@ -90,7 +90,7 @@ fi
 
 libs+=(
     https://curl.haxx.se/download/curl-7.46.0.tar.gz
-    https://ftp.osuosl.org/pub/blfs/7.10/y/yaml-0.1.6.tar.gz
+    https://pyyaml.org/download/libyaml/yaml-0.1.6.tar.gz
     https://ftp.postgresql.org/pub/source/v9.4.5/postgresql-9.4.5.tar.gz
     # Stick with this version for now:
     #   https://gist.github.com/cclements/d20109ad07c24d004b910ca3ef59d02d
@@ -500,12 +500,12 @@ operating_system=\$(uname -s | awk '{print tolower(\$0)}')
 echo "\$LD_LIBRARY_PATH-\$DYLD_LIBRARY_PATH-\$DYLD_FALLBACK_LIBRARY_PATH" | egrep \$env_root > /dev/null
 if [[ \$? -ne 0 ]] ; then
     export PATH; PATH="\$env_root/../bin:\$env_root/usr/bin:\$env_root/gems/bin:\$PATH"
-    
+
     export C_INCLUDE_PATH="\$env_root/usr/include"
     export CPLUS_INCLUDE_PATH="\$C_INCLUDE_PATH"
 
-    # We also set the default paths to make sure that they will be seen by the OS. 
-    # There have been issues with Ruby FFI (mostly on OSX 10.11) but why risk it, 
+    # We also set the default paths to make sure that they will be seen by the OS.
+    # There have been issues with Ruby FFI (mostly on OSX 10.11) but why risk it,
     # set these always just to make sure.
     export LIBRARY_PATH="\$env_root/usr/lib:/usr/lib:/usr/local/lib"
     export LD_LIBRARY_PATH="\$LIBRARY_PATH"
@@ -516,8 +516,8 @@ if [[ \$? -ne 0 ]] ; then
             export DYLD_FALLBACK_LIBRARY_PATH="\$LIBRARY_PATH"
         else
             export DYLD_LIBRARY_PATH="\$LIBRARY_PATH"
-        fi  
-    fi  
+        fi
+    fi
 
 fi
 

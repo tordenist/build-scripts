@@ -11,7 +11,7 @@ else
 fi
 
 
-build_scripts_outfile="build-scripts.tar.gz"
+build_scripts_outfile="tordenist-build-scripts-0390651.tar.gz"
 
 mkdir -p $build_dir
 cd $build_dir
